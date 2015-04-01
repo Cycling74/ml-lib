@@ -305,7 +305,6 @@
 		7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
 		7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
-		7DD669111989098F008EF46E /* libflext-max_sd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAE097818F40FB100049C24 /* libflext-max_sd.a */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
@@ -1089,7 +1088,6 @@
 				7D7DA05B18F69B2A00F417F6 /* MaxAPI.framework in Frameworks */,
 				7D7DA05C18F69B2A00F417F6 /* MaxAudioAPI.framework in Frameworks */,
 				7D7DA05D18F69B2A00F417F6 /* Accelerate.framework in Frameworks */,
-				7DD669111989098F008EF46E /* libflext-max_sd.a in Frameworks */,
 				7D7DA05E18F69B2A00F417F6 /* libgrt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6204,6 +6202,7 @@
 				PRODUCT_NAME = ml.adaboost;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
+				maxsdk = "$(PROJECT_DIR)/../../MaxSDK-6.1.4/c74support";
 			};
 			name = Development;
 		};
@@ -6240,6 +6239,7 @@
 				PRODUCT_NAME = ml.adaboost;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
+				maxsdk = "$(PROJECT_DIR)/../../MaxSDK-6.1.4/c74support";
 			};
 			name = Deployment;
 		};
@@ -6274,6 +6274,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = ml.adaboost;
 				USER_HEADER_SEARCH_PATHS = "";
+				maxsdk = "$(PROJECT_DIR)/../../MaxSDK-6.1.4/c74support";
 			};
 			name = Default;
 		};
@@ -6939,6 +6940,7 @@
 				PRODUCT_NAME = ml.minmax;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
+				maxsdk = "$(PROJECT_DIR)/../../MaxSDK-6.1.4/c74support";
 			};
 			name = Development;
 		};
@@ -6975,6 +6977,7 @@
 				PRODUCT_NAME = ml.minmax;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
+				maxsdk = "$(PROJECT_DIR)/../../MaxSDK-6.1.4/c74support";
 			};
 			name = Deployment;
 		};
@@ -7009,6 +7012,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = ml.minmax;
 				USER_HEADER_SEARCH_PATHS = "";
+				maxsdk = "$(PROJECT_DIR)/../../MaxSDK-6.1.4/c74support";
 			};
 			name = Default;
 		};
@@ -7381,6 +7385,7 @@
 				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
+				maxsdk = "$(PROJECT_DIR)/../../c74support";
 			};
 			name = Development;
 		};
@@ -7418,6 +7423,7 @@
 				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
+				maxsdk = "$(PROJECT_DIR)/../../c74support";
 			};
 			name = Deployment;
 		};
@@ -7453,6 +7459,7 @@
 				PRODUCT_NAME = ml;
 				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = "";
+				maxsdk = "$(PROJECT_DIR)/../../c74support";
 			};
 			name = Default;
 		};
@@ -7620,7 +7627,7 @@
 		E9A5BC930A33819900AD9F03 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_ALTIVEC_EXTENSIONS = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -7636,22 +7643,21 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = i386;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
+				maxsdk = "$(PROJECT_DIR)/../../../c74support";
 			};
 			name = Development;
 		};
 		E9A5BC940A33819900AD9F03 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_ALTIVEC_EXTENSIONS = YES;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
@@ -7668,22 +7674,21 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = i386;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
+				maxsdk = "$(PROJECT_DIR)/../../../c74support";
 			};
 			name = Deployment;
 		};
 		E9A5BC950A33819900AD9F03 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7691,15 +7696,14 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = i386;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
+				maxsdk = "$(PROJECT_DIR)/../../../c74support";
 			};
 			name = Default;
 		};

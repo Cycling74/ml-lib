@@ -22,6 +22,13 @@ $LastChangedBy: thomas $
 #include <new>
 #include <cstring>
 
+#ifdef post
+#undef post
+#endif
+
+#ifdef error
+#undef error
+#endif
 
 #include "flpushns.h"
 
